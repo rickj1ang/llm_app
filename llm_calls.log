@@ -1,0 +1,7 @@
+2026-01-07 22:12:11,629 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 22:12:11,640 [INFO] hello
+2026-01-07 22:12:11,641 [INFO] time taken: 0.95
+2026-01-07 22:12:11,641 [INFO] Hello! How can I assist you today? 😊
+2026-01-07 22:12:11,641 [INFO] Prompt Tokens: 9
+2026-01-07 22:12:11,641 [INFO] Completion Tokens: 11
+2026-01-07 22:12:11,641 [INFO] Cached Tokens: 0
