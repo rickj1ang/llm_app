@@ -5,3 +5,12 @@
 2026-01-07 22:12:11,641 [INFO] Prompt Tokens: 9
 2026-01-07 22:12:11,641 [INFO] Completion Tokens: 11
 2026-01-07 22:12:11,641 [INFO] Cached Tokens: 0
+2026-01-08 10:13:50,648 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-01-08 10:15:05,683 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-01-08 10:15:39,348 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-08 10:15:39,359 [INFO] hello
+2026-01-08 10:15:39,359 [INFO] time taken: 1.51
+2026-01-08 10:15:39,359 [INFO] Hello! How can I assist you today? 😊
+2026-01-08 10:15:39,359 [INFO] Prompt Tokens: 9
+2026-01-08 10:15:39,359 [INFO] Completion Tokens: 11
+2026-01-08 10:15:39,360 [INFO] Cached Tokens: 0
