@@ -63,3 +63,53 @@
 2026-01-08 17:49:13,343 [INFO] Prompt Tokens: 41
 2026-01-08 17:49:13,343 [INFO] Completion Tokens: 2
 2026-01-08 17:49:13,343 [INFO] Cached Tokens: 0
+2026-01-08 21:59:41,535 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-08 21:59:41,559 [INFO] 你是谁
+2026-01-08 21:59:41,559 [INFO] time taken: 2.26
+2026-01-08 21:59:41,560 [INFO] 你好呀！我是通义千问（Qwen），是阿里巴巴集团旗下的通义实验室自主研发的超大规模语言模型。你可以叫我Qwen，我是一个能够回答问题、创作文字、编程、表达观点等的助手。有什么我可以帮你的吗？😊
+2026-01-08 21:59:41,560 [INFO] Prompt Tokens: 10
+2026-01-08 21:59:41,560 [INFO] Completion Tokens: 55
+2026-01-08 21:59:41,560 [INFO] Cached Tokens: 0
+2026-01-08 22:00:04,007 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-08 22:00:04,023 [INFO] 你是谁
+2026-01-08 22:00:04,023 [INFO] time taken: 1.22
+2026-01-08 22:00:04,023 [INFO] 你好呀！我是通义千问（Qwen），是阿里巴巴集团旗下的通义实验室自主研发的超大规模语言模型。你可以叫我Qwen，我擅长回答问题、创作文字、编程、逻辑推理等等。有什么我可以帮你的吗？😊
+2026-01-08 22:00:04,023 [INFO] Prompt Tokens: 10
+2026-01-08 22:00:04,023 [INFO] Completion Tokens: 52
+2026-01-08 22:00:04,023 [INFO] Cached Tokens: 0
+2026-01-08 22:01:51,986 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-08 22:01:52,007 [INFO] 你是谁
+2026-01-08 22:01:52,008 [INFO] time taken: 2.03
+2026-01-08 22:01:52,008 [INFO] 你好！我是通义千问（Qwen），是阿里巴巴集团旗下的通义实验室自主研发的超大规模语言模型。我可以帮助你回答问题、创作文字、编程、逻辑推理、表达观点等。如果你有任何需要帮助的地方，尽管告诉我，我会尽力提供支持！😊
+2026-01-08 22:01:52,008 [INFO] Prompt Tokens: 10
+2026-01-08 22:01:52,008 [INFO] Completion Tokens: 58
+2026-01-08 22:01:52,008 [INFO] Cached Tokens: 0
+2026-01-08 22:02:30,419 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-01-08 22:02:51,683 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-08 22:02:51,702 [INFO] 你是谁
+2026-01-08 22:02:51,702 [INFO] time taken: 1.51
+2026-01-08 22:02:51,702 [INFO] 你好！我是通义千问（Qwen），是阿里巴巴集团旗下的通义实验室自主研发的超大规模语言模型。我能够回答问题、创作文字，比如写故事、写公文、写邮件、写剧本、逻辑推理、编程等等，还能表达观点，玩游戏等。如果你有任何问题或需要帮助，尽管告诉我，我会尽力提供支持！😊
+2026-01-08 22:02:51,703 [INFO] Prompt Tokens: 10
+2026-01-08 22:02:51,703 [INFO] Completion Tokens: 76
+2026-01-08 22:02:51,703 [INFO] Cached Tokens: 0
+2026-01-08 22:02:59,739 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-08 22:02:59,754 [INFO] 你是谁
+2026-01-08 22:02:59,754 [INFO] time taken: 1.57
+2026-01-08 22:02:59,755 [INFO] 你好！我是通义千问（Qwen），是阿里巴巴集团旗下的通义实验室自主研发的超大规模语言模型。我能够回答问题、创作文字，比如写故事、写公文、写邮件、写剧本、逻辑推理、编程等等，还能表达观点，玩游戏等。如果你有任何问题或需要帮助，欢迎随时告诉我！😊
+2026-01-08 22:02:59,755 [INFO] Prompt Tokens: 10
+2026-01-08 22:02:59,755 [INFO] Completion Tokens: 72
+2026-01-08 22:02:59,755 [INFO] Cached Tokens: 0
+2026-01-08 22:03:34,790 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-08 22:03:34,807 [INFO] 你是谁
+2026-01-08 22:03:34,807 [INFO] time taken: 1.86
+2026-01-08 22:03:34,807 [INFO] 你好！我是通义千问（Qwen），是阿里巴巴集团旗下的通义实验室自主研发的超大规模语言模型。我能够回答问题、创作文字，比如写故事、写公文、写邮件、写剧本、逻辑推理、编程等等，还能表达观点，玩游戏等。如果你有任何问题或需要帮助，欢迎随时告诉我！😊
+2026-01-08 22:03:34,807 [INFO] Prompt Tokens: 10
+2026-01-08 22:03:34,807 [INFO] Completion Tokens: 72
+2026-01-08 22:03:34,807 [INFO] Cached Tokens: 0
+2026-01-08 22:04:19,232 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-08 22:04:19,247 [INFO] 你是谁
+2026-01-08 22:04:19,247 [INFO] time taken: 1.82
+2026-01-08 22:04:19,247 [INFO] 你好！我是Qwen，是阿里巴巴集团旗下的通义实验室自主研发的超大规模语言模型。我能够回答问题、创作文字，比如写故事、写公文、写邮件、写剧本、逻辑推理、编程等等，还能表达观点，玩游戏等。如果你有任何问题或需要帮助，欢迎随时告诉我！😊
+2026-01-08 22:04:19,247 [INFO] Prompt Tokens: 10
+2026-01-08 22:04:19,247 [INFO] Completion Tokens: 67
+2026-01-08 22:04:19,247 [INFO] Cached Tokens: 0

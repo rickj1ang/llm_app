@@ -9,3 +9,6 @@
 - [朴素的function call](function_call_easy.md)
 - [升级的function call](function_call_upgrade.md)
 - [workflow](workflow.md)
+
+## 目的
+最后我们会用这些技术来开发一个朴素的Code Agent
