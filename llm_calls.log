@@ -113,3 +113,32 @@
 2026-01-08 22:04:19,247 [INFO] Prompt Tokens: 10
 2026-01-08 22:04:19,247 [INFO] Completion Tokens: 67
 2026-01-08 22:04:19,247 [INFO] Cached Tokens: 0
+2026-01-09 19:53:33,533 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-09 19:56:59,488 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-09 19:59:53,897 [INFO] Retrying request to /chat/completions in 0.496985 seconds
+2026-01-09 19:59:54,521 [INFO] Retrying request to /chat/completions in 0.974905 seconds
+2026-01-09 20:00:12,637 [INFO] Retrying request to /chat/completions in 0.464761 seconds
+2026-01-09 20:00:13,258 [INFO] Retrying request to /chat/completions in 0.754495 seconds
+2026-01-09 20:00:45,643 [INFO] Retrying request to /chat/completions in 0.425141 seconds
+2026-01-09 20:00:46,189 [INFO] Retrying request to /chat/completions in 0.964219 seconds
+2026-01-09 20:01:40,266 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-09 20:01:40,275 [INFO] 你是谁
+2026-01-09 20:01:40,275 [INFO] time taken: 1.64
+2026-01-09 20:01:40,275 [INFO] 你好！我是通义千问（Qwen），是阿里巴巴集团旗下的通义实验室自主研发的超大规模语言模型。我能够回答问题、创作文字，比如写故事、写公文、写邮件、写剧本、逻辑推理、编程等等，还能表达观点，玩游戏等。如果你有任何问题或需要帮助，欢迎随时告诉我！😊
+2026-01-09 20:01:40,275 [INFO] Prompt Tokens: 10
+2026-01-09 20:01:40,275 [INFO] Completion Tokens: 72
+2026-01-09 20:01:40,275 [INFO] Cached Tokens: 0
+2026-01-09 20:01:51,052 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-09 20:01:51,855 [INFO] 你是谁
+2026-01-09 20:01:51,855 [INFO] time taken: 0.80
+2026-01-09 20:01:51,855 [INFO] 我是通义千问，由阿里云研发的超大规模语言模型。我能够回答问题、创作文字，比如写故事、写公文、写邮件、写剧本、逻辑推理、编程等等，还能表达观点，玩游戏等。如果你有任何需要帮助的地方，欢迎告诉我！
+2026-01-09 20:01:51,856 [INFO] Prompt Tokens: 21
+2026-01-09 20:01:51,856 [INFO] Completion Tokens: 60
+2026-01-09 20:01:51,856 [INFO] Cached Tokens: 0
+2026-01-09 20:02:40,577 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-09 20:02:41,300 [INFO] 你是谁
+2026-01-09 20:02:41,301 [INFO] time taken: 0.72
+2026-01-09 20:02:41,301 [INFO] 我是通义千问，阿里巴巴集团旗下的超大规模语言模型。我能够回答问题、创作文字，比如写故事、写公文、写邮件、写剧本、逻辑推理、编程等等，还能表达观点，玩游戏等。如果你有任何问题或需要帮助，欢迎随时告诉我！
+2026-01-09 20:02:41,301 [INFO] Prompt Tokens: 21
+2026-01-09 20:02:41,301 [INFO] Completion Tokens: 60
+2026-01-09 20:02:41,301 [INFO] Cached Tokens: 0
