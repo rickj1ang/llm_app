@@ -142,3 +142,45 @@
 2026-01-09 20:02:41,301 [INFO] Prompt Tokens: 21
 2026-01-09 20:02:41,301 [INFO] Completion Tokens: 60
 2026-01-09 20:02:41,301 [INFO] Cached Tokens: 0
+2026-01-10 19:03:14,571 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-10 19:03:14,581 [INFO] hello!, my name is Rick
+2026-01-10 19:03:14,581 [INFO] time taken: 0.73
+2026-01-10 19:03:14,581 [INFO] Hello Rick! 😊 It's nice to meet you. How can I assist you today?
+2026-01-10 19:03:14,581 [INFO] Prompt Tokens: 25
+2026-01-10 19:03:14,581 [INFO] Completion Tokens: 19
+2026-01-10 19:03:14,581 [INFO] Cached Tokens: 0
+2026-01-10 19:03:15,186 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-10 19:03:15,188 [INFO] What is my name?
+2026-01-10 19:03:15,188 [INFO] time taken: 0.60
+2026-01-10 19:03:15,188 [INFO] Your name is Rick! 😊 It's great to have you here. How can I help you today?
+2026-01-10 19:03:15,188 [INFO] Prompt Tokens: 59
+2026-01-10 19:03:15,188 [INFO] Completion Tokens: 22
+2026-01-10 19:03:15,188 [INFO] Cached Tokens: 0
+2026-01-10 19:20:27,602 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-10 19:20:27,612 [INFO] hi my name is Rick, Who R U?
+2026-01-10 19:20:27,612 [INFO] time taken: 1.04
+2026-01-10 19:20:27,612 [INFO] Hi Rick! I'm Qwen, a large-scale language model developed by Alibaba Cloud. It's great to meet you! How can I assist you today? 😊
+2026-01-10 19:20:27,612 [INFO] Prompt Tokens: 29
+2026-01-10 19:20:27,612 [INFO] Completion Tokens: 34
+2026-01-10 19:20:27,612 [INFO] Cached Tokens: 0
+2026-01-10 19:20:54,635 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-10 19:20:54,637 [INFO] How do you do, today
+2026-01-10 19:20:54,637 [INFO] time taken: 0.86
+2026-01-10 19:20:54,637 [INFO] Hi Rick! I'm doing great, thanks for asking! 🌟 How about you? Hope your day is going wonderfully! 😊
+2026-01-10 19:20:54,637 [INFO] Prompt Tokens: 79
+2026-01-10 19:20:54,637 [INFO] Completion Tokens: 28
+2026-01-10 19:20:54,637 [INFO] Cached Tokens: 0
+2026-01-10 19:21:15,422 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-10 19:21:15,425 [INFO] I have tough day
+2026-01-10 19:21:15,425 [INFO] time taken: 1.14
+2026-01-10 19:21:15,425 [INFO] I'm really sorry to hear that you're having a tough day, Rick. 💙 Sometimes life can feel overwhelming, and it's okay to feel that way. I'm here to listen if you want to talk about what's on your mind—no judgment, just a friendly ear. Or if you'd prefer, we can shift gears and chat about something lighter—like your favorite movie, a fun memory, or even a random fact that might make you smile. You're not alone in this. ❤️
+2026-01-10 19:21:15,425 [INFO] Prompt Tokens: 121
+2026-01-10 19:21:15,425 [INFO] Completion Tokens: 103
+2026-01-10 19:21:15,425 [INFO] Cached Tokens: 0
+2026-01-10 19:22:05,439 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-10 19:22:05,442 [INFO] who am I
+2026-01-10 19:22:05,442 [INFO] time taken: 0.87
+2026-01-10 19:22:05,442 [INFO] You're Rick! 🌟 I remember you clearly—your name is Rick, and we've just started chatting. It's nice to get to know you better. 😊 How can I help make your day a little brighter?
+2026-01-10 19:22:05,442 [INFO] Prompt Tokens: 237
+2026-01-10 19:22:05,442 [INFO] Completion Tokens: 47
+2026-01-10 19:22:05,442 [INFO] Cached Tokens: 0
