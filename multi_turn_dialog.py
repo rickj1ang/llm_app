@@ -4,6 +4,7 @@ import time
 from openai import OpenAI
 
 from models import Conversation
+from storage import ConversationStorage
 from utils import log_llm_calls, setup_logging
 
 
@@ -36,10 +37,15 @@ def multi_turn_dialog(conversation: Conversation):
         conversation.add_assistant_message(response_text)
 
 
-def start_chat_cli():
+def start_chat_cli(conversation_id: str):
     """启动简单的多轮对话 CLI"""
-    conversation = Conversation()
-    conversation.add_system_message("You are a helpful assistant.")
+    storage = ConversationStorage()
+
+    conversation = Conversation(storage, conversation_id)
+
+    # 如果是新对话，添加 system message
+    if len(conversation.messages) == 0:
+        conversation.add_system_message("You are a helpful assistant.")
 
     print("多轮对话 CLI (输入 'quit' 或 'exit' 退出，Ctrl+C 也可以)")
 
@@ -54,7 +60,10 @@ def start_chat_cli():
             multi_turn_dialog(conversation)
 
             # 打印助手的回复
-            if conversation.messages and conversation.messages[-1]["role"] == "assistant":
+            if (
+                conversation.messages
+                and conversation.messages[-1]["role"] == "assistant"
+            ):
                 print(f"AI: {conversation.messages[-1]['content']}\n")
 
         except KeyboardInterrupt:
@@ -63,9 +72,10 @@ def start_chat_cli():
 
 
 if __name__ == "__main__":
-    setup_logging()
+    # setup_logging()
     # 使用示例：调用 CLI
-    start_chat_cli()
+    # 123456 rick
+    start_chat_cli("1234567")
 
     # 或者使用硬编码的测试对话
     # conversation = Conversation()
