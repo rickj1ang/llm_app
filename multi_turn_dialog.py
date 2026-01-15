@@ -75,7 +75,7 @@ if __name__ == "__main__":
     # setup_logging()
     # 使用示例：调用 CLI
     # 123456 rick
-    start_chat_cli("1234567")
+    start_chat_cli("123456")
 
     # 或者使用硬编码的测试对话
     # conversation = Conversation()
