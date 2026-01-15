@@ -4,7 +4,7 @@ import random
 import time
 
 from openai import OpenAI
-
+from openai import types
 from models import Conversation
 from utils import log_llm_calls, setup_logging
 
@@ -80,8 +80,15 @@ def llm_call(message: str) -> None:
         print(tc_results)
 
 
-def process_tool_call():
-    pass
+def process_tool_call(conversation: Conversation, tool_call: types.ChatCompletionMessageToolCall) -> str:
+    tc_name = tool_call.function.name
+    conversation.add_tool_call(tc_name)
+    tc_results = None
+    match tc_name:
+        case "get_current_weather":
+            tc_results = get_weather(json.loads(tool_call.function.arguments))
+    conversation.add_assistant_message(tc_results)
+    return tc_results
 
 
 if __name__ == "__main__":

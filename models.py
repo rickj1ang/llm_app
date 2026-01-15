@@ -1,3 +1,4 @@
+from audioop import add
 from typing import Optional
 
 from storage import ConversationStorage
@@ -49,3 +50,6 @@ class Conversation:
 
     def add_assistant_message(self, content: str) -> None:
         self._record_message("assistant", content)
+
+    def add_toll_call(self, name: str) -> None:
+        self._record_message("toll_call", name)
