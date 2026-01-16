@@ -93,4 +93,4 @@ def process_tool_call(conversation: Conversation, tool_call: types.ChatCompletio
 
 if __name__ == "__main__":
     setup_logging()
-    llm_call(message="深圳现在多少适合出去玩吗")
+    llm_call(message="深圳现在适合出去玩吗")
