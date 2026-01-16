@@ -1,6 +1,5 @@
 import sqlite3
 import uuid
-from typing import Optional
 
 
 class ConversationStorage:
@@ -22,6 +21,8 @@ class ConversationStorage:
                     conversation_id TEXT NOT NULL,
                     role TEXT NOT NULL,
                     content TEXT NOT NULL,
+                    type TEXT NOT NULL,
+                    tool_call_id TEXT,
                     FOREIGN KEY (conversation_id) REFERENCES conversations(id)
                 )
             """)
@@ -38,12 +39,19 @@ class ConversationStorage:
             conn.commit()
         return conversation_id
 
-    def add_message(self, conversation_id: str, role: str, content: str):
+    def add_message(
+        self,
+        conversation_id: str,
+        role: str,
+        content: str,
+        type: str,
+        tool_call_id: str | None = None,
+    ):
         """添加单条消息"""
         with sqlite3.connect(self.db_path) as conn:
             conn.execute(
-                "INSERT INTO messages (conversation_id, role, content) VALUES (?, ?, ?)",
-                (conversation_id, role, content),
+                "INSERT INTO messages (conversation_id, role, content, type, tool_call_id) VALUES (?, ?, ?, ?, ?)",
+                (conversation_id, role, content, type, tool_call_id),
             )
             conn.commit()
 
@@ -51,12 +59,18 @@ class ConversationStorage:
         """加载对话的所有消息"""
         with sqlite3.connect(self.db_path) as conn:
             cursor = conn.execute(
-                """SELECT role, content FROM messages
+                """SELECT role, content, type, tool_call_id FROM messages
                    WHERE conversation_id = ?
                    ORDER BY id ASC""",
                 (conversation_id,),
             )
-            return [{"role": row[0], "content": row[1]} for row in cursor.fetchall()]
+            messages = []
+            for row in cursor.fetchall():
+                msg = {"role": row[0], "content": row[1], "type": row[2]}
+                if row[3]:  # tool_call_id 存在时才添加
+                    msg["tool_call_id"] = row[3]
+                messages.append(msg)
+            return messages
 
     def list_by_user(self, user_id: str = "default") -> list[str]:
         """列出用户的所有对话 ID"""

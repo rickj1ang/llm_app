@@ -211,3 +211,28 @@
 2026-01-15 16:28:04,264 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
 2026-01-15 16:28:30,856 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
 2026-01-15 16:29:28,838 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-16 10:50:17,364 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-16 14:17:24,892 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-16 14:24:47,428 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-16 14:24:48,239 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-16 14:24:48,241 [INFO] 深圳现在适合出去玩吗
+2026-01-16 14:24:48,241 [INFO] time taken: 0.80
+2026-01-16 14:24:48,241 [INFO] 根据天气情况，深圳市今天是雨天，建议您携带雨具或考虑室内活动。如果非必要，可能不太适合外出游玩。您可以选择去商场、博物馆或咖啡馆等地方避雨休闲。
+2026-01-16 14:24:48,241 [INFO] Prompt Tokens: 216
+2026-01-16 14:24:48,241 [INFO] Completion Tokens: 45
+2026-01-16 14:24:48,241 [INFO] Cached Tokens: 0
+2026-01-16 14:25:47,764 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-16 14:25:48,478 [INFO] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-16 14:25:48,480 [INFO] 深圳现在适合出去玩吗
+2026-01-16 14:25:48,480 [INFO] time taken: 0.70
+2026-01-16 14:25:48,480 [INFO] 深圳市今天天气多云，气温适宜，适合外出活动。不过建议根据实际情况携带雨具或防晒用品，以应对可能的天气变化。祝你玩得愉快！
+2026-01-16 14:25:48,480 [INFO] Prompt Tokens: 216
+2026-01-16 14:25:48,480 [INFO] Completion Tokens: 37
+2026-01-16 14:25:48,480 [INFO] Cached Tokens: 0
+{"timestamp": "2026-01-16T14:36:52.384925", "level": "INFO", "logger": "llm_logger", "event": "llm_call", "message": "测试消息", "response_text": "这是回复", "elapsed_time": 1.23, "prompt_tokens": 10, "completion_tokens": 20, "cached_tokens": 0, "total_tokens": 30}
+{"timestamp": "2026-01-16T14:37:21.616195", "level": "INFO", "logger": "llm_logger", "event": "llm_call", "message": "深圳现在适合出去玩吗", "response_text": "深圳市今天是多云天气，气温适宜，没有下雨的迹象，非常适合外出游玩。不过建议根据个人喜好携带防晒用品或轻便外套，以应对温差或阳光照射。祝你玩得愉快！", "elapsed_time": 0.75, "prompt_tokens": 216, "completion_tokens": 46, "cached_tokens": 0, "total_tokens": 262}
+{"timestamp": "2026-01-16T14:58:30.214149", "level": "INFO", "logger": "llm_logger", "event": "tool_call", "tool_name": "get_current_weather", "tool_arguments": "{\"location\": \"深圳市\"}", "tool_result": "深圳市今天是晴天。"}
+{"timestamp": "2026-01-16T14:58:31.060349", "level": "INFO", "logger": "llm_logger", "event": "llm_call", "message": "深圳现在适合出去玩吗", "response_text": "深圳市今天天气晴朗，非常适合出去玩！气温也较为舒适，建议外出享受阳光，注意防晒哦。", "elapsed_time": 0.85, "prompt_tokens": 306, "completion_tokens": 24, "cached_tokens": 0, "total_tokens": 330}
+{"timestamp": "2026-01-16T14:59:53.267187", "level": "INFO", "logger": "llm_logger", "event": "tool_call", "tool_name": "get_current_weather", "tool_arguments": "{\"location\": \"深圳市\"}", "tool_result": "深圳市今天是雨天。"}
+{"timestamp": "2026-01-16T14:59:53.268002", "level": "INFO", "logger": "llm_logger", "event": "tool_call", "tool_name": "get_current_temperature", "tool_arguments": "{\"location\": \"深圳市\"}", "tool_result": "深圳市今天是35摄氏度。"}
+{"timestamp": "2026-01-16T14:59:54.336830", "level": "INFO", "logger": "llm_logger", "event": "llm_call", "message": "综合考虑下来深圳现在适合出去玩吗", "response_text": "根据当前信息，深圳市今天是雨天，气温为35摄氏度，天气炎热且有降雨。在这种情况下，外出游玩可能会比较不适，建议尽量避免在户外长时间活动，以免中暑或淋雨。\n\n如果一定要外出，建议携带雨具、穿着轻便透气的衣物，并注意防暑降温。也可以考虑选择一些室内场所，如博物馆、购物中心或电影院等，作为替代的休闲方式。", "elapsed_time": 1.07, "prompt_tokens": 343, "completion_tokens": 90, "cached_tokens": 0, "total_tokens": 433}
