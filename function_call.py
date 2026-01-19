@@ -6,7 +6,9 @@ import time
 from openai import OpenAI
 from openai.types.chat import ChatCompletionMessageToolCallUnion
 
-from models import Conversation
+from models import Conversation, Role
+from prompts import get_tool_system_prompt
+from storage import ConversationStorage
 from utils import log_llm_calls, log_tool_call, setup_logging
 
 tools = [
@@ -61,7 +63,7 @@ def get_temp(arguments):
     return f"{location}今天是{random_temp}。"
 
 
-def llm_call(message: str) -> None:
+def llm_call_with_tool(conversation: Conversation) -> None:
     # get api key from env variable
     api_key = os.getenv("DASHSCOPE_API_KEY")
     if not api_key:
@@ -74,12 +76,6 @@ def llm_call(message: str) -> None:
         base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
     )
 
-    # send the llm api call
-    conversation = Conversation()
-    # conversation.add_system_message(
-    #     "You are a helpful assistant. and whatever user input, you just output 'pong!'"
-    # )
-    conversation.add_user_message(message)
     while True:
         time_start = time.time()
         completion = client.chat.completions.create(
@@ -94,7 +90,13 @@ def llm_call(message: str) -> None:
             response_text = assistant_output.content
             # peace the warning
             if response_text:
-                log_llm_calls(message, response_text, time_elapsed, completion.usage)
+                conversation.add_assistant_message(response_text)
+                log_llm_calls(
+                    conversation.messages[-1]["content"],
+                    response_text,
+                    time_elapsed,
+                    completion.usage,
+                )
                 break
 
         else:
@@ -118,6 +120,41 @@ def process_tool_call(tool_call: ChatCompletionMessageToolCallUnion) -> str:
     return tc_result or "function call fail, no result"
 
 
+def start_chat_tool_cli(conversation_id: str):
+    """启动简单的多轮对话 CLI"""
+    storage = ConversationStorage()
+
+    conversation = Conversation(storage, conversation_id)
+
+    # 如果是新对话，添加 system message
+    if len(conversation.messages) == 0:
+        conversation.add_system_message(get_tool_system_prompt())
+
+    print("多轮对话 CLI (输入 'quit' 或 'exit' 退出，Ctrl+C 也可以)")
+
+    while True:
+        try:
+            user_input = input("You: ")
+            if user_input.lower() in ["quit", "exit"]:
+                print("再见!")
+                break
+
+            conversation.add_user_message(user_input)
+            llm_call_with_tool(conversation)
+
+            # 打印助手的回复
+            if (
+                conversation.messages
+                and conversation.messages[-1]["role"] == Role.ASSISTANT.value
+                and conversation.messages[-1]["content"]
+            ):
+                print(f"AI: {conversation.messages[-1]['content']}\n")
+
+        except KeyboardInterrupt:
+            print("\n再见!")
+            break
+
+
 if __name__ == "__main__":
-    setup_logging()
-    llm_call(message="综合考虑下来深圳现在适合出去玩吗")
+    # setup_logging()
+    start_chat_tool_cli("new_tool")
