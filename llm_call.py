@@ -45,12 +45,12 @@ def stream_llm_call(message: str) -> None:
     # print(f"\n--- 完整回复 ---\n{full_response}")
 
 
-def llm_call(message: str) -> None:
+def llm_call(message: str) -> str:
     # get api key from env variable
     api_key = os.getenv("DASHSCOPE_API_KEY")
     if not api_key:
         print("API key not found")
-        return
+        return "API key not found"
 
     # create OpenAI client instance with qwen url and apikey
     client = OpenAI(
@@ -61,9 +61,9 @@ def llm_call(message: str) -> None:
     # send the llm api call
     time_start = time.time()
     conversation = Conversation()
-    # conversation.add_system_message(
-    #     "You are a helpful assistant. and whatever user input, you just output 'pong!'"
-    # )
+    conversation.add_system_message(
+        "You are a helpful assistant. and whatever user input, you just output 'pong!'"
+    )
     conversation.add_user_message(message)
     completion = client.chat.completions.create(
         model="qwen-flash",
@@ -76,6 +76,8 @@ def llm_call(message: str) -> None:
     # just for peace the warning
     if response_text:
         log_llm_calls(message, response_text, time_elapsed, completion.usage)
+        return response_text
+    return "something went wrong"
 
 
 if __name__ == "__main__":

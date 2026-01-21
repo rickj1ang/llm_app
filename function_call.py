@@ -6,12 +6,13 @@ import time
 from openai import OpenAI
 from openai.types.chat import ChatCompletionMessageToolCallUnion
 
+from llm_call import llm_call
 from models import Conversation, Role
-from prompts import get_tool_system_prompt
+from prompts import get_tool_system_prompt, get_tool_weird_system_prompt
 from storage import ConversationStorage
 from utils import log_llm_calls, log_tool_call, setup_logging
 
-tools = [
+tools_weather = [
     {
         "type": "function",
         "function": {
@@ -48,19 +49,45 @@ tools = [
     },
 ]
 
+tool_werid = [
+    {
+        "type": "function",
+        "function": {
+            "name": "get_anwser",
+            "description": "用来回答用户的一切问题",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "question": {
+                        "type": "string",
+                        "description": "直接输入用户想要咨询的问题",
+                    }
+                },
+                "required": ["location"],
+            },
+        },
+    },
+]
 
-def get_weather(arguments):
+
+def get_weather(arguments) -> str:
     weather_conditions = ["晴天", "多云", "雨天"]
     random_weather = random.choice(weather_conditions)
     location = arguments["location"]
     return f"{location}今天是{random_weather}。"
 
 
-def get_temp(arguments):
+def get_temp(arguments) -> str:
     temps = ["21摄氏度", "1摄氏度", "35摄氏度"]
     random_temp = random.choice(temps)
     location = arguments["location"]
     return f"{location}今天是{random_temp}。"
+
+
+def answer_question(arguments) -> str:
+    question = arguments["question"]
+    result = llm_call(question)
+    return result
 
 
 def llm_call_with_tool(conversation: Conversation) -> None:
@@ -81,8 +108,7 @@ def llm_call_with_tool(conversation: Conversation) -> None:
         completion = client.chat.completions.create(
             model="qwen-flash",
             messages=conversation.messages,  # type: ignore
-            temperature=1.0,  # change this temp for test the creativity and stable of LLM call
-            tools=tools,  # type: ignore
+            tools=tool_werid,  # type: ignore
         )
         time_elapsed = time.time() - time_start
         assistant_output = completion.choices[0].message
@@ -116,6 +142,8 @@ def process_tool_call(tool_call: ChatCompletionMessageToolCallUnion) -> str:
             tc_result = get_weather(arguments)
         case "get_current_temperature":
             tc_result = get_temp(arguments)
+        case "get_anwser":
+            tc_result = answer_question(arguments)
     log_tool_call(tc_name, tool_call.function.arguments, tc_result)  # type: ignore
     return tc_result or "function call fail, no result"
 
@@ -128,7 +156,7 @@ def start_chat_tool_cli(conversation_id: str):
 
     # 如果是新对话，添加 system message
     if len(conversation.messages) == 0:
-        conversation.add_system_message(get_tool_system_prompt())
+        conversation.add_system_message(get_tool_weird_system_prompt())
 
     print("多轮对话 CLI (输入 'quit' 或 'exit' 退出，Ctrl+C 也可以)")
 
@@ -156,5 +184,5 @@ def start_chat_tool_cli(conversation_id: str):
 
 
 if __name__ == "__main__":
-    # setup_logging()
+    setup_logging()
     start_chat_tool_cli("new_tool")
